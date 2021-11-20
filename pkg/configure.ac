@@ -27,7 +27,7 @@ dnl
 dnl 4. If none of the above are given, the script tries to find the location of the CPLEX installation and then does the same as 3.
 
 
-AC_INIT([Rcplex], 0.3.2)
+AC_INIT([Rcplex], [0.3.2])
 
 FOUND_ALL="no"
 
@@ -180,7 +180,8 @@ dnl substitute in src/Makevars
 AC_SUBST(PKG_CFLAGS)
 AC_SUBST(PKG_LIBS)
 AC_SUBST(PKG_CPPFLAGS)
-AC_OUTPUT(src/Makevars)
+AC_CONFIG_FILES([src/Makevars])
+AC_OUTPUT
 
 exit 0
 
