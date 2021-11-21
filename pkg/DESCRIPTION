@@ -11,4 +11,4 @@ Imports: methods
 Enhances: Matrix
 SystemRequirements: IBM ILOG CPLEX libraries and headers
 License: LGPL (>= 2.0)
-URL: http://R-Forge.R-project.org/projects/rcplex
+URL: https://R-Forge.R-project.org/projects/rcplex

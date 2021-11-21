@@ -1,7 +1,7 @@
 // The actual solving procedure is called using the function Rcplex 
 #include "Rcplex.h"
 
-SEXP Rcplex(SEXP numcols_p,
+SEXP _Rcplex(SEXP numcols_p,
 	    SEXP numrows_p,
 	    SEXP objsen_p,
 	    SEXP cvec,

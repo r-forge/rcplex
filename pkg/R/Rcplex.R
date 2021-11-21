@@ -88,7 +88,7 @@ Rcplex <- function(cvec, Amat, bvec, Qmat = NULL, lb = 0, ub = Inf,
     on.exit(.C("Rcplex_free"))
 
     ## Call the solver
-    res <- .Call("Rcplex",
+    res <- .Call("_Rcplex",
                  as.integer(numcols),
                  as.integer(numrows),
                  as.integer(objsensei),
@@ -258,7 +258,7 @@ Rcplex_solve_QCP <- function( cvec, Amat, bvec, Qmat = NULL, QC, lb = 0,
   nQC <- length(QC$dir)
 
   ## Call cplex interface
-  res <- .Call( "Rcplex_QCP",
+  res <- .Call( "_Rcplex_QCP",
                 as.integer(nvars),
                 as.integer(nconstr),
                 as.integer(objsensei),
