@@ -403,6 +403,7 @@ SEXP _Rcplex_QCP(SEXP numcols_p,
     Rprintf("Status: %d", status);
     my_error(("Failed to set parameters to default.\n"));
   }
+
   return(res);
 }
 

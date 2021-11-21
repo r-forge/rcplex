@@ -1,6 +1,7 @@
 #include <R.h>
 #include <Rinternals.h>
 #include <R_ext/Rdynload.h>
+#include "Rcplex.h"
 
 SEXP _Rcplex(SEXP numcols_p,
 	    SEXP numrows_p,
@@ -40,6 +41,7 @@ SEXP _Rcplex_QCP(SEXP numcols_p,
 		SEXP nQC);
 
 void Rcplex_free(void);
+void Rcplex_close(void);
 
 static const R_CallMethodDef CallEntries[] = {
     {"_Rcplex", (DL_FUNC) &_Rcplex, 16},
@@ -47,10 +49,19 @@ static const R_CallMethodDef CallEntries[] = {
     {NULL, NULL, 0}
 };
 
+/*
 static const R_CMethodDef CEntries[] = {
-    {"Rcplex_free", (DL_FUNC) &_Rcplex, 0},
+    {"Rcplex_free", (DL_FUNC) &Rcplex_free, 0},
     {NULL, NULL, 0}
 };
+*/
+
+static const R_CMethodDef CEntries[] = {
+    {"Rcplex_free", (DL_FUNC) &Rcplex_free, 0},
+    {"Rcplex_close", (DL_FUNC) &Rcplex_close, 0},
+    {NULL, NULL, 0}
+};
+
 
 void R_init_Rcplex(DllInfo *dll)
 {
