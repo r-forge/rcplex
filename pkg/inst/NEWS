@@ -1,3 +1,16 @@
+Changes in 0.3-5:
+
+  o Received two similar patches related to usage of recent CPLEX
+  libraries. Thanks to Florian Schwendinger and Paul Rubin. Fixed
+  configure.ac and additionally the header and C sources (for pedantic
+  compilation). Tested with the IBM ILOG CPLEX Community Edition 20.1.
+
+Changes in 0.3-4:
+
+  o Fixed WARNING stemming from configure.ac. C functions now properly
+  handled QCP officially supported and exported. Tested with the IBM
+  ILOG CPLEX Community Edition 12.7.1.
+
 Changes in 0.3-3:
 
   o New maintainer. QCP officially supported and exported. Tested with

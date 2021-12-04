@@ -1,6 +1,12 @@
 // The actual solving procedure is called using the function Rcplex 
 #include "Rcplex.h"
 
+CPXENVptr env;
+CPXLPptr lp;
+int numcalls;
+int max_numcalls;
+int forceCplxClose;
+
 SEXP _Rcplex(SEXP numcols_p,
 	    SEXP numrows_p,
 	    SEXP objsen_p,
