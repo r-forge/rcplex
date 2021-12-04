@@ -27,7 +27,7 @@ dnl
 dnl 4. If none of the above are given, the script tries to find the location of the CPLEX installation and then does the same as 3.
 
 
-AC_INIT([Rcplex], [0.3.2])
+AC_INIT([Rcplex], [0.3.5])
 
 FOUND_ALL="no"
 
@@ -129,7 +129,7 @@ dnl check for awk
    AC_PROG_AWK
 
    CPLEXLIBDIR="${CPLEX_DIR}/lib/${SYSTEM}/${LIBFORMAT}"
-   CPLEX_LIBS="-L${CPLEXLIBDIR} `${AWK} 'BEGIN {FS = " = "} /^CLNFLAGS/ {print $2}' ${CPLEX_MAKEFILE}`"
+   CPLEX_LIBS="-L${CPLEXLIBDIR} `${AWK} 'BEGIN {FS = " = "} /^CLNFLAGS/ {print $2}' ${CPLEX_MAKEFILE} | sed -e 's,\$(CPLEXLIB),cplex,'`"
    if test [-z CPLEX_LIBS] ; then
       AC_MSG_ERROR([Could not get library info from CPLEX example Makefile])
    fi
