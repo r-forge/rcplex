@@ -60,11 +60,11 @@ as.sparse_vector.simple_triplet_matrix<- function(x){
 as.quadratic_constraint <- function(x, ...)
   UseMethod("as.quadratic_constraint")
 
-as.quadratic_constraint.list <- function(x){
+as.quadratic_constraint.list <- function(x, ...){
   quadratic_constraint(x$QC, x$dir, x$b)
 }
 
-as.quadratic_constraint.quadratic_constraint <- function(x) {
+as.quadratic_constraint.quadratic_constraint <- function(x, ...) {
   x
 }
 
