@@ -2248,14 +2248,14 @@ if test "$FOUND_ALL" = "no" ; then
 
    if test -z "$SYSTEM"  ; then
       ## Set system as the first found
-      SYSTEM=`ls -l ${CPLEX_DIR}/bin | awk '($1 ~ /d/) {print $NF}' | head -n1 -`
+      SYSTEM=`ls -l ${CPLEX_DIR}/bin | awk '($1 ~ /d/) {print $NF}' | head -n1 `
       if test ! -d "${CPLEX_DIR}/bin/${SYSTEM}"  ; then
             as_fn_error $? "CPLEX library location could not be found" "$LINENO" 5
       fi
    fi
 
    ## Guess libformat: just grab the first that comes up.
-   LIBFORMAT=`ls -l ${CPLEX_DIR}/lib/${SYSTEM} | awk '($1 ~ /d/) {print $NF}' | head -n1 -`
+   LIBFORMAT=`ls -l ${CPLEX_DIR}/lib/${SYSTEM} | awk '($1 ~ /d/) {print $NF}' | head -n1 `
    if test -z "$LIBFORMAT" -a ! -d "${CPLEX_DIR}/lib/${SYSTEM}/${LIBFORMAT}" ; then
       as_fn_error $? "CPLEX library location could not be found" "$LINENO" 5
    fi

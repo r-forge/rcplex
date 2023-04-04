@@ -27,7 +27,7 @@ dnl
 dnl 4. If none of the above are given, the script tries to find the location of the CPLEX installation and then does the same as 3.
 
 
-AC_INIT([Rcplex], [0.3.5])
+AC_INIT([Rcplex], [0.3.6])
 
 FOUND_ALL="no"
 
@@ -108,14 +108,14 @@ if test ["$FOUND_ALL" = "no"] ; then
 
    if test [-z "$SYSTEM" ] ; then
       ## Set system as the first found
-      SYSTEM=`ls -l ${CPLEX_DIR}/bin | awk '($1 ~ /d/) {print $NF}' | head -n1 -`
+      SYSTEM=`ls -l ${CPLEX_DIR}/bin | awk '($1 ~ /d/) {print $NF}' | head -n1 `
       if test [! -d "${CPLEX_DIR}/bin/${SYSTEM}" ] ; then
             AC_MSG_ERROR([CPLEX library location could not be found])
       fi
    fi
 
    ## Guess libformat: just grab the first that comes up.
-   LIBFORMAT=`ls -l ${CPLEX_DIR}/lib/${SYSTEM} | awk '($1 ~ /d/) {print $NF}' | head -n1 -`
+   LIBFORMAT=`ls -l ${CPLEX_DIR}/lib/${SYSTEM} | awk '($1 ~ /d/) {print $NF}' | head -n1 `
    if test [-z "$LIBFORMAT" -a ! -d "${CPLEX_DIR}/lib/${SYSTEM}/${LIBFORMAT}"] ; then
       AC_MSG_ERROR([CPLEX library location could not be found])
    fi
