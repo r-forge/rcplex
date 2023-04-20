@@ -1,3 +1,12 @@
+Changes in 0.3-7:
+
+  o On some platforms Rcplex failed to install due to duplicated defined variables in C. Thanks to Stefan Wolfsheimer for spotting this. Tested with the IBM ILOG CPLEX Community Edition 20.1 (Ubuntu 22.04 x64).
+
+Changes in 0.3-6:
+
+  o Fixed R CMD check WARNING on S3 Method arguments not matching.
+  o Fixed configure file to compile on MacOS. Tested with the IBM ILOG CPLEX Community Edition 22.0.1 under MacOS running on ARM64.
+
 Changes in 0.3-5:
 
   o Received two similar patches related to usage of recent CPLEX
